@@ -1,0 +1,18 @@
+version: '3.7'
+
+services:
+  NOME-SERVIZIO:
+    container_name: NOME-SERVIZIO
+    restart: always
+    build:
+      context: .
+      dockerfile: src/Dockerfile
+    ports:
+      - 80:5001
+    networks:
+      - lan-network
+
+networks:
+  lan-network:
+    external:
+      name: docker-net
